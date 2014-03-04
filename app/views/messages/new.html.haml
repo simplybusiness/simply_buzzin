@@ -1,0 +1,6 @@
+%h1 Message#new
+%p Find me in app/views/message/new.html.haml
+
+= form_for @message, url: {action: "create"} do |f|
+  = f.text_field :title
+  = f.submit

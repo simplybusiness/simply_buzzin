@@ -1,11 +1,11 @@
 SimplyBuzzin::Application.routes.draw do
 
-  root :to => 'message#index'
+  root :to => 'messages#index'
 
-  get "message/index"
+  get "messages/index"
 
-  get "message/new"
+  get "messages/new"
 
-  get "message/create"
+  post "messages/create"
 
 end
