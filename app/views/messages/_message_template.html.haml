@@ -1,8 +1,22 @@
 %html
   %head
     %meta{charset: "utf-8"}
-  %body.message
-    %p= message_params['icon']
-    %p= message_params['title']
-    %p= message_params['header']
-    %p= message_params['body']
+    %style
+    :css
+      body, h1, h2, img, div, p { margin: 0; padding: 0; }
+      body { width: 384px; margin: 0; padding: 10px 0 0 0; font-family:'Arial'; font-size: 20px; text-align: center; }
+      h1 { font-family: 'Merienda One'; font-size: 45px; margin-bottom: 10px; }
+      h2 { font-family:'Arial'; font-size: 45px; margin-bottom: 25px; }
+      img { width: 384px; }
+      .top-section { background-color: #000000; color: #FFFFFF; padding: 25px 20px; }
+      .main-text { background-color: #FFFFFF; color: #000000; border-radius: 3px; padding: 20px 10px; }
+
+  %body
+    %p= image_tag("https://s3-eu-west-1.amazonaws.com/simply-buzzin-icons/"+message_params['icon'], :class => "dither", :style => "width: 380px")
+    .top-section{:style => "background: #000000, color: #ffffff"}
+      %h1.title
+        =message_params['title']
+      %h2.header
+        =message_params['header']
+      .main-text{:style => "font-size: 18px; margin: 10px; background-color: #ffffff, color: #000000; padding: 10px"}
+        %p= message_params['body']
