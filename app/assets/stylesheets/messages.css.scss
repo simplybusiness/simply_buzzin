@@ -9,6 +9,7 @@
   font-family:'Arial';
   font-size: 20px;
   text-align: center;
+  position: relative;
 
   h1, h2, img, div, p {
     margin: 0;
@@ -44,5 +45,30 @@
     &:hover{
       background-color: #000;
     }
+  }
+
+  .image-container {
+    position: relative;
+  }
+
+  .image-container:hover span.zoom-icon{
+    visibility:visible;
+  }
+
+  span.zoom-icon{
+    visibility:hidden;
+    position:absolute;
+    left:0%;
+    top:0%;
+    height: 100%;
+    width: 100%;
+    background: url('/images/refresh_icon.png') no-repeat 173px 162px rgba(0, 0, 0, 0.2);
+  }
+
+  .refresh-link {
+    height: 100%;
+    width: 100%;
+    display: block;
+    cursor: pointer;
   }
 }
