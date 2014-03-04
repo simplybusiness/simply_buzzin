@@ -8,11 +8,12 @@
       h1 { font-family: 'Merienda One'; font-size: 45px; margin-bottom: 10px; }
       h2 { font-family:'Arial'; font-size: 45px; margin-bottom: 25px; }
       img { width: 384px; }
-      .top-section { background-color: #000000; color: #FFFFFF; padding: 25px 20px; }
-      .main-text { background-color: #FFFFFF; color: #000000; border-radius: 3px; padding: 20px 10px; }
-
+      .top-section { background-color: #000000; color: #FFFFFF; padding: 25px 20px; border-radius: 10px;}
+      .main-text { background-color: #FFFFFF; color: #000000; border-radius: 3px; padding: 20px 10px; border-radius: 4px;}
+      .callout{width: 71px}
   %body
     %p= image_tag("https://s3-eu-west-1.amazonaws.com/simply-buzzin-icons/"+message_params['icon'], :class => "dither", :style => "width: 380px")
+    %p= image_tag("https://s3-eu-west-1.amazonaws.com/simply-buzzin-icons/callout.png", :class => "callout")
     .top-section{:style => "background: #000000, color: #ffffff"}
       %h1.title
         =message_params['title']

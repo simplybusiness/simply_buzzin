@@ -1,8 +1,5 @@
 class MessagesController < ApplicationController
 
-  def index
-  end
-
   def new
     @message = Message.new
   end
@@ -13,5 +10,8 @@ class MessagesController < ApplicationController
 
     little_printer_client = LittlePrinterClient.new(message_params['printer'])
     little_printer_client.message(message)
+
+    flash[:notice] = "Message sent!"
+    redirect_to root_url
   end
 end
