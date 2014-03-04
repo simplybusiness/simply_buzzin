@@ -1,6 +1,6 @@
 SimplyBuzzin::Application.routes.draw do
 
-  root :to => 'messages#index'
+  root :to => 'messages#new'
 
   get "messages/index"
 
