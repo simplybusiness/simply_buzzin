@@ -3,7 +3,7 @@ module MessagesHelper
     codes = printer_codes
     options = []
     codes.each_with_index do |p, i|
-      options << ["Printer #{i}", p]
+      options << ["Printer #{p}", p]
     end
     options
   end
