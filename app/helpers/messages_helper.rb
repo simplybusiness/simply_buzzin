@@ -1,8 +1,9 @@
 module MessagesHelper
   def options_for_printers
     codes = printer_codes
-    options = codes.each_with_index do |p, i|
-      [p, "Printer {i}"]
+    options = []
+    codes.each_with_index do |p, i|
+      options << ["Printer #{i}", p]
     end
     options
   end
