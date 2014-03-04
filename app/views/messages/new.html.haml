@@ -1,15 +1,18 @@
-%h1 Send a message
-%p Enter details below
+#preview
+  = form_for @message, url: {action: "create"} do |f|
+    %p= image_tag("https://s3-eu-west-1.amazonaws.com/simply-buzzin-icons/boy_face_01.png", :class => "dither", :style => "width: 380px", :id => "smiley-image")
+    .top-section
+      %h1#inplace-title.edit
+        = "Title"
+      %h2#inplace-header.edit
+        = "Header"
+      .main-text{:style => "font-size: 18px; margin: 10px; background-color: #ffffff, color: #000000; padding: 10px"}
+        %pre#inplace-body.edit_area
+          = "Enter your text here..."
+    = f.submit "Print", {:class => "submit-button"}
+    = f.select :printer, options_for_printers
 
-= form_for @message, url: {action: "create"} do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.label :header
-  = f.text_field :header
-  = f.label :body
-  = f.text_field :body
-  = f.label :icon
-  = f.select :icon, options_for_smiley_faces
-  = f.label :printer
-  = f.select :printer, options_for_printers
-  = f.submit
+    = f.hidden_field :title
+    = f.hidden_field :header
+    = f.hidden_field :body
+    = f.hidden_field :icon, :value => "jason_face_01.png"
