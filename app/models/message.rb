@@ -7,7 +7,7 @@ class Message
   attribute :title
   attribute :header
   attribute :body
-  attribute :smiley_face
+  attribute :icon
   attribute :printer
 
   def persisted?
