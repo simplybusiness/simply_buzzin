@@ -1,58 +1,43 @@
 // Place all the styles related to the message controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-#preview{
-  width: 384px;
+body{
+  background: #f6f6f6
+}
+#preview {
+  background-color: #fff;
   margin: 0 auto;
-  padding: 10px 0 0 0;
-  font-family:'Arial';
-  font-size: 20px;
-  text-align: center;
-  position: relative;
+  margin-top: 50px;
+  width: 500px;
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
 
-  h1, h2, img, div, p {
-    margin: 0;
-    padding: 0;
+  h1, h2, img { margin: 0; padding: 0; }
+
+  .container {
+  	width: 384px;
+    padding: 0
+
   }
 
-  h1 { font-family: 'Merienda One'; font-size: 45px; margin-bottom: 10px; color: #FFFFFF;}
-  h2 { font-family:'Arial'; font-size: 45px; margin-bottom: 25px; }
-  img { width: 384px; }
-  .top-section { background-color: #000000; color: #FFFFFF; padding: 25px 20px; }
-  .main-text pre { background-color: #FFFFFF; color: #000000; border-radius: 3px; padding: 20px 10px; text-align: left }
-
-  .editable-input{
-    color: #000000
-  }
-  .editable-area{
-    color: #000000;
-    textarea{
-      min-height: 100px
-    }
+  .topSection {
+  	background-color: #000;
+  	color: #FFFFFF;
+  	border-radius: 10px;
+  	text-align: center;
+    padding: 5px;
   }
 
-  .submit-button {
-    background: #333;
-    color: white;
-    border-radius: 3px;
-    width: 384px;
-    padding: 15px 0px;
-    font-size: 18px;
-    border: 0;
-    margin-top: 10px;
-
-    &:hover{
-      background-color: #000;
-    }
+  .mainText {
+  	background-color: #FFFFFF;
+  	color: #000000;
+  	border-radius: 3px;
+  	font-size: 12px;
+  	text-align: left;
   }
 
   .image-container {
-    position: relative;
-  }
-
-  .image-container:hover span.zoom-icon{
-    visibility:visible;
+  	position: relative;
   }
 
   span.zoom-icon{
@@ -65,10 +50,109 @@
     background: url('/images/refresh_icon.png') no-repeat 173px 162px rgba(0, 0, 0, 0.2);
   }
 
+  .refresh-image {
+    background-color:rgba(0, 0, 0, 1)
+  }
+
   .refresh-link {
-    height: 100%;
-    width: 100%;
+  	height: 100%;
+  	width: 100%;
+  	display: block;
+  	cursor: pointer;
+  }
+
+  .submit-button {
+  	margin-top: 15px;
+  	background: #000;
+  	color: white;
+  	border-radius: 10px;
+  	width: 384px;
+  	padding: 15px 0px;
+  	font-size: 18px;
+  	border: 0;
+  }
+
+  .submit-button:hover {
+  	background-color: #333;
+  }
+
+  .image-container:hover span.zoom-icon{
+    visibility:visible;
+  }
+
+  .copyright {
+  	font-size: 12px;
+  	margin: 20px 30px;
+  	text-align: center;
+  }
+
+  textarea::-webkit-input-placeholder {
+     color: black;
+  }
+
+  #message_title, #message_header {
+  	background: none;
+  	border: 0;
+  	color: white;
+  	display: block;
+  	width: 100%;
+  	text-align: center;
+  }
+
+  #message_title {
+  	font-size: 43px;
+  	font-family: "ff-market-web",cursive;
+  }
+
+  #message_header {
+  	font-size: 40px;
+  	margin-bottom: 30px;
+    min-height: 70px;
+    height: 70px
+  }
+
+  #message_body {
+  	background: white;
+  	border-radius: 5px;
+  	border: 0;
+  	width: 95%;
+  	padding: 20px 10px;
+  	font-size: 18px;
+  	font-family: "Arial";
+    min-height: 100px;
+    height: 100px;
+  }
+
+  input::-webkit-input-placeholder {
+     color: white;
+  }
+
+  #message_header::-webkit-input-placeholder {
+     color: white;
+  }
+
+  #message_printer{
+    margin-left: auto;
+    margin-right: auto;
     display: block;
-    cursor: pointer;
+    margin-top: 5px
+  }
+
+  .social {
+    margin-left: auto;
+  	margin-right: auto;
+  	display: block;
+    margin-top: 20px
+  }
+
+  .callout {
+  	position: absolute;
+  	bottom: 0px;
+  	left: 50%;
+  	margin-left: -44px;
+  }
+
+  form {
+      margin-bottom:50px;
   }
 }

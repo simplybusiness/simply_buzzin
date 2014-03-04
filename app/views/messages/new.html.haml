@@ -1,21 +1,19 @@
 #preview
-  = form_for @message, url: {action: "create"} do |f|
-    .image-container
-      =image_tag("https://s3-eu-west-1.amazonaws.com/simply-buzzin-icons/boy_face_01.png", :class => "face-image")
-      %span.zoom-icon
-        %a.refresh-link
-    .top-section
-      %h1#inplace-title.edit
-        = "Title"
-      %h2#inplace-header.edit
-        = "Header"
-      .main-text{:style => "font-size: 18px; margin: 10px; background-color: #ffffff, color: #000000; padding: 10px"}
-        %pre#inplace-body.edit_area
-          = "Enter your text here..."
-    = f.submit "Print", {:class => "submit-button"}
-    = f.select :printer, options_for_printers
-
-    = f.hidden_field :title
-    = f.hidden_field :header
-    = f.hidden_field :body
-    = f.hidden_field :icon
+  .container
+    =image_tag("/images/torn_paper.png")
+    = form_for @message, url: {action: "create"} do |f|
+      .image-container
+        =image_tag("https://s3-eu-west-1.amazonaws.com/simply-buzzin-icons/boy_face_01.png", :class => "face-image")
+        %span.zoom-icon
+          %a.refresh-link
+        =image_tag("/images/callout.png", :class => "callout")
+      .topSection
+        = f.text_field :title, :placeholder => "Enter Title"
+        = f.text_area :header, :placeholder => "Enter Header Text"
+        = f.text_area :body, :placeholder => "Compose new message ..."
+      = f.submit "SEND YOUR MESSAGE", {:class => "submit-button"}
+      = f.select :printer, options_for_printers
+      =image_tag("/images/social.png", :class => "social")
+      .copyright
+        Copyright 2014 Simply Business. All Rights Reserved. Simply Business is authorised and regulated by the FCA. Company registration number: 03967717.
+      = f.hidden_field :icon
