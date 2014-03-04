@@ -9,6 +9,12 @@ module MessagesHelper
   end
 
   def options_for_smiley_faces
-    ["1", "2"]
+    options = []
+    ["boy","girl","jason"].each do |type|
+      (1..7).each do |pos|
+        options << ["#{type} face #{pos}", "#{type}_face_#{pos}"]
+      end
+    end
+    options
   end
 end
